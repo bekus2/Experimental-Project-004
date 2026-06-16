@@ -1,0 +1,48 @@
+<!--
+Project: Freelancer Web Toolbox
+File: examples/mini-lead-calculator/index.html
+Author: Beck Sarbassov
+Version: 0.1.0
+Release Date: 2026-06-16
+Last Updated: 2026-06-16
+Copyright: © Beck Sarbassov. All rights reserved.
+
+EN: Standalone calculator for amount, commission, tax, and net result.
+RU: Автономный калькулятор суммы, комиссии, налога и чистого результата.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mini Lead Calculator</title>
+  <style>
+    body { margin: 0; padding: 24px; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f5f7f4; color: #17211f; }
+    main { max-width: 720px; margin: auto; padding: 24px; border: 1px solid #d8e1dc; border-radius: 8px; background: #fff; }
+    label { display: grid; gap: 6px; margin: 12px 0; font-weight: 700; }
+    input, button { font: inherit; border-radius: 6px; }
+    input { width: 100%; padding: 10px; border: 1px solid #d8e1dc; }
+    button { padding: 10px 14px; border: 0; color: #fff; background: #0f766e; font-weight: 800; }
+    output { display: block; margin-top: 14px; padding: 12px; white-space: pre-wrap; background: #eef5f2; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Mini Lead Calculator</h1>
+    <label>Project amount <input id="amount" type="number" value="250000"></label>
+    <label>Commission percent <input id="commission" type="number" value="5"></label>
+    <label>Tax percent <input id="tax" type="number" value="3"></label>
+    <button type="button" id="calculate">Calculate</button>
+    <output id="result"></output>
+  </main>
+  <script>
+    document.getElementById("calculate").addEventListener("click", function () {
+      const amount = Number(document.getElementById("amount").value) || 0;
+      const commission = amount * ((Number(document.getElementById("commission").value) || 0) / 100);
+      const tax = amount * ((Number(document.getElementById("tax").value) || 0) / 100);
+      const net = amount - commission - tax;
+      document.getElementById("result").textContent = `Commission: ${commission.toFixed(2)}\nTax: ${tax.toFixed(2)}\nNet amount: ${net.toFixed(2)}`;
+    });
+  </script>
+</body>
+</html>

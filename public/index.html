@@ -1,0 +1,142 @@
+<!--
+Project: Freelancer Web Toolbox
+File: public/index.html
+Author: Beck Sarbassov
+Version: 0.1.0
+Release Date: 2026-06-16
+Last Updated: 2026-06-16
+Copyright: © Beck Sarbassov. All rights reserved.
+
+EN: Main offline browser-based toolbox interface.
+RU: Основной интерфейс офлайн-набора браузерных инструментов.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Offline web toolbox for freelancers, developers, CRM integrators and small business automation.">
+  <meta name="keywords" content="freelancer tools, web toolbox, developer tools, CRM, JavaScript, offline app, UTM builder, slug generator, KZT">
+  <meta name="author" content="Beck Sarbassov">
+  <meta property="og:title" content="Freelancer Web Toolbox">
+  <meta property="og:description" content="Offline web toolbox for freelancers, developers, CRM integrators and small business automation.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="./assets/img/preview.svg">
+  <meta name="theme-color" content="#0f766e">
+  <title>Freelancer Web Toolbox</title>
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="./assets/css/app.css">
+</head>
+<body>
+  <a class="skip-link" href="#tools-dashboard" data-i18n="accessibility.skip">Skip to tools</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-block" aria-label="Freelancer Web Toolbox">
+        <span class="brand-mark" aria-hidden="true">FWT</span>
+        <div>
+          <p class="eyebrow" data-i18n="header.eyebrow">Offline browser toolkit</p>
+          <h1 data-i18n="app.name">Freelancer Web Toolbox</h1>
+        </div>
+      </div>
+
+      <div class="header-controls">
+        <label class="language-label" for="language-select" data-i18n="header.language">Language</label>
+        <select id="language-select" class="language-select" aria-label="Language">
+          <option value="en">English</option>
+          <option value="ru">Русский</option>
+          <option value="kk">Қазақша</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="hero.kicker">For freelance and web operations</p>
+        <h2 id="hero-title" data-i18n="hero.title">Practical web tools that work fully offline.</h2>
+        <p class="hero-text" data-i18n="hero.subtitle">
+          Generate links, validate data, prepare SEO snippets, estimate prices, and keep reusable results in your browser.
+        </p>
+        <p class="privacy-pill" data-i18n="hero.offline">No backend. No database. No login. No analytics.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#tools-dashboard" data-i18n="actions.openTools">Open tools</a>
+          <a class="button secondary" href="../docs/QUICK_START.md" data-i18n="actions.viewDocs">View documentation</a>
+          <button class="button ghost" type="button" id="copy-description" data-i18n="actions.copyGithubDescription">Copy GitHub description</button>
+        </div>
+      </div>
+      <figure class="hero-visual">
+        <img src="./assets/img/preview.svg" width="520" height="340" alt="Freelancer Web Toolbox dashboard preview">
+        <figcaption data-i18n="hero.visualCaption">Offline dashboard with developer, marketing, CRM, business, SEO, text, and security tools.</figcaption>
+      </figure>
+    </section>
+
+    <section class="tool-controls" aria-labelledby="tools-heading">
+      <div>
+        <p class="eyebrow" data-i18n="tools.kicker">Tool dashboard</p>
+        <h2 id="tools-heading" data-i18n="tools.heading">Choose a tool</h2>
+      </div>
+      <label class="search-label" for="tool-search" data-i18n="tools.searchLabel">Search tools</label>
+      <input id="tool-search" type="search" data-i18n-placeholder="tools.searchPlaceholder" placeholder="Search by name, description, or category">
+    </section>
+
+    <nav class="category-tabs" aria-label="Tool categories" id="category-tabs"></nav>
+
+    <section id="tools-dashboard" class="tool-grid" aria-live="polite"></section>
+
+    <section class="workspace-layout" aria-label="Active tool and saved results">
+      <section id="tool-workspace" class="tool-workspace" aria-live="polite">
+        <div class="empty-state">
+          <h2 data-i18n="workspace.emptyTitle">Open a tool to start working</h2>
+          <p data-i18n="workspace.emptyText">Use the cards above to format JSON, build links, generate slugs, estimate freelance prices, and more.</p>
+        </div>
+      </section>
+
+      <aside class="saved-panel" aria-labelledby="saved-results-heading">
+        <div class="panel-header">
+          <div>
+            <p class="eyebrow" data-i18n="saved.kicker">Local browser storage</p>
+            <h2 id="saved-results-heading" data-i18n="saved.heading">Saved results</h2>
+          </div>
+          <button class="text-button" type="button" id="clear-saved-results" data-i18n="actions.clearAll">Clear all</button>
+        </div>
+        <div id="saved-results-list" class="saved-list"></div>
+      </aside>
+    </section>
+
+    <section class="security-note" aria-labelledby="security-note-title">
+      <h2 id="security-note-title" data-i18n="security.title">Security and privacy note</h2>
+      <p data-i18n="security.body">This app runs locally in your browser and does not send your input anywhere. LocalStorage stays on your device, but you should avoid saving secrets, private tokens, passwords, or real payment details.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p data-i18n="footer.built">Built as an offline-first public GitHub project.</p>
+    <p>Author: Beck Sarbassov · Created: 2026-06-16 · Last updated: 2026-06-16 · © Beck Sarbassov. All rights reserved.</p>
+  </footer>
+
+  <script src="./assets/js/translations.js"></script>
+  <script src="./assets/js/storage.js"></script>
+  <script src="./assets/js/security.js"></script>
+  <script src="./assets/js/i18n.js"></script>
+  <script src="./assets/js/tools/json-tools.js"></script>
+  <script src="./assets/js/tools/base64-tools.js"></script>
+  <script src="./assets/js/tools/url-tools.js"></script>
+  <script src="./assets/js/tools/utm-builder.js"></script>
+  <script src="./assets/js/tools/whatsapp-link.js"></script>
+  <script src="./assets/js/tools/telegram-link.js"></script>
+  <script src="./assets/js/tools/password-generator.js"></script>
+  <script src="./assets/js/tools/slug-generator.js"></script>
+  <script src="./assets/js/tools/meta-preview.js"></script>
+  <script src="./assets/js/tools/robots-generator.js"></script>
+  <script src="./assets/js/tools/sitemap-generator.js"></script>
+  <script src="./assets/js/tools/webhook-viewer.js"></script>
+  <script src="./assets/js/tools/kzt-calculator.js"></script>
+  <script src="./assets/js/tools/freelance-price-estimator.js"></script>
+  <script src="./assets/js/tools/invoice-text-generator.js"></script>
+  <script src="./assets/js/tools/html-minifier.js"></script>
+  <script src="./assets/js/tools/css-minifier.js"></script>
+  <script src="./assets/js/app.js"></script>
+</body>
+</html>

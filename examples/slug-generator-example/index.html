@@ -1,0 +1,46 @@
+<!--
+Project: Freelancer Web Toolbox
+File: examples/slug-generator-example/index.html
+Author: Beck Sarbassov
+Version: 0.1.0
+Release Date: 2026-06-16
+Last Updated: 2026-06-16
+Copyright: © Beck Sarbassov. All rights reserved.
+
+EN: Standalone minimal RU/KZ/EN slug generator example.
+RU: Минимальный автономный пример генератора slug RU/KZ/EN.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Slug Generator Example</title>
+  <style>
+    body { margin: 0; padding: 24px; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f5f7f4; color: #17211f; }
+    main { max-width: 720px; margin: auto; padding: 24px; border: 1px solid #d8e1dc; border-radius: 8px; background: #fff; }
+    label { display: grid; gap: 6px; margin: 12px 0; font-weight: 700; }
+    input, button { font: inherit; border-radius: 6px; }
+    input { width: 100%; padding: 10px; border: 1px solid #d8e1dc; }
+    button { padding: 10px 14px; border: 0; color: #fff; background: #0f766e; font-weight: 800; }
+    output { display: block; margin-top: 14px; padding: 12px; background: #eef5f2; border-radius: 6px; overflow-wrap: anywhere; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Slug Generator Example</h1>
+    <label>Text <input id="text" value="Қазақ тілінде сайт жасау"></label>
+    <button type="button" id="generate">Generate</button>
+    <output id="result"></output>
+  </main>
+  <script>
+    const map = { а:"a", б:"b", в:"v", г:"g", д:"d", е:"e", ё:"yo", ж:"zh", з:"z", и:"i", й:"i", к:"k", л:"l", м:"m", н:"n", о:"o", п:"p", р:"r", с:"s", т:"t", у:"u", ф:"f", х:"h", ц:"c", ч:"ch", ш:"sh", щ:"shch", ы:"y", э:"e", ю:"yu", я:"ya", ь:"", ъ:"", ә:"a", ғ:"g", қ:"q", ң:"n", ө:"o", ұ:"u", ү:"u", һ:"h", і:"i" };
+    function slugify(value) {
+      return value.split("").map((char) => map[char.toLowerCase()] ?? char).join("").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").replace(/-{2,}/g, "-");
+    }
+    document.getElementById("generate").addEventListener("click", function () {
+      document.getElementById("result").textContent = slugify(document.getElementById("text").value);
+    });
+  </script>
+</body>
+</html>

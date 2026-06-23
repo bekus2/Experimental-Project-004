@@ -2,14 +2,14 @@
 
 Author: Beck Sarbassov  
 Date created: 2026-06-16  
-Last updated: 2026-06-16  
+Last updated: 2026-06-23  
 Copyright: © Beck Sarbassov. All rights reserved.
 
 ## Clone
 
 ```bash
-git clone https://github.com/bekus2/Experimental-Project-004.git
-cd Experimental-Project-004
+git clone https://github.com/bekus2/Freelancer-Web-Toolbox.git
+cd Freelancer-Web-Toolbox
 ```
 
 ## Open Directly

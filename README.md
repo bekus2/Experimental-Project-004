@@ -4,7 +4,7 @@ Offline web toolbox for freelancers, developers, CRM integrators and small busin
 
 Author: Beck Sarbassov  
 Date created: 2026-06-16  
-Last updated: 2026-06-16  
+Last updated: 2026-06-23  
 Copyright: © Beck Sarbassov. All rights reserved.
 
 ## Short Description
@@ -116,7 +116,7 @@ This repository does not include an automatic deployment workflow.
 ## Project Structure
 
 ```text
-Experimental-Project-004/
+Freelancer-Web-Toolbox/
 ├── README.md
 ├── LICENSE
 ├── CHANGELOG.md
@@ -245,7 +245,7 @@ open-source
 
 Автор: Beck Sarbassov  
 Дата создания: 2026-06-16  
-Последнее обновление: 2026-06-16  
+Последнее обновление: 2026-06-23  
 Авторские права: © Beck Sarbassov. Все права защищены.
 
 ## Краткое описание
@@ -437,5 +437,5 @@ open-source
 
 Автор: Beck Sarbassov  
 Дата создания: 2026-06-16  
-Последнее обновление: 2026-06-16  
+Последнее обновление: 2026-06-23  
 Авторские права: © Beck Sarbassov. Все права защищены.
